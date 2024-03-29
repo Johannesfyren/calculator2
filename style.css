@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    height: 1000px;
+}
+button{
+    padding:20px;
+    margin:2px;
+}
