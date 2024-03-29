@@ -19,23 +19,39 @@ const buttonEqualPressed = document.querySelector('#button-equals');
 let firstNumber='', secondNumber='', operator;
 let firstNumberStored = false;
 let secondNumberStored = false;
+let result='';
 
 
 function operate(firstNumber, secondNumber, operator){
-    add (firstNumber,secondNumber);
+    switch (operator){
+        case '+': result = add(firstNumber,secondNumber).toFixed(2);
+        break;
+        case '-': result = subtract(firstNumber,secondNumber).toFixed(2);
+        break;
+        case '*': result = multiply(firstNumber,secondNumber).toFixed(2);
+        break;
+        case '/': result = divide(firstNumber,secondNumber).toFixed(2);
+        break;
+        default:"NaN";
+    }
+    displayContent.textContent = result;
+    // firstNumber=result;
+    // firstNumberStored = false;
+    // secondNumber = '';
+    
 }
 
 function add (a,b){
-    return a+b;
+    return Number(a)+Number(b);
 }
 function subtract (a,b){
-    return a-b;
+    return Number(a)-Number(b);
 }
 function multiply (a,b){
-    return a*b;
+    return Number(a)*Number(b);
 }
 function divide (a,b){
-    return a/b;
+    return Number(a)/Number(b);
 }
 
 
@@ -51,8 +67,6 @@ button1Pressed.addEventListener("click", ()=> {
         displayContent.textContent = secondNumber;
     } 
 });
-
-
 button2Pressed.addEventListener("click", ()=> {
     if (!firstNumberStored){
         firstNumber += '2';
@@ -135,10 +149,37 @@ button9Pressed.addEventListener("click", ()=> {
 });
 
 
-buttonAddPressed.addEventListener("click", ()=>{operator ='+'});
-buttonMinusPressed.addEventListener("click", ()=>{operator ='-'});
-buttonMultiplyPressed.addEventListener("click", ()=>{operator ='*'});
-buttonDividePressed.addEventListener("click", ()=>{operator ='/'});
+buttonAddPressed.addEventListener("click", ()=>{
+    operator ='+';
+    firstNumberStored = true;
+});
 
-buttonClearPressed.addEventListener("click", ()=>{operator ='+'});
-buttonEqualPressed.addEventListener("click", ()=>{operator ='+'});
+buttonMinusPressed.addEventListener("click", ()=>{
+    operator ='-';
+    firstNumberStored = true;
+});
+buttonMultiplyPressed.addEventListener("click", ()=>{
+    operator ='*';
+    firstNumberStored = true;
+});
+buttonDividePressed.addEventListener("click", ()=>{
+    operator ='/';
+    firstNumberStored = true;
+});
+
+buttonClearPressed.addEventListener("click", ()=>{
+    firstNumber='', secondNumber='', operator ='';
+    firstNumberStored = false;
+    secondNumberStored = false;
+    displayContent.textContent = '';
+});
+buttonEqualPressed.addEventListener("click", ()=>{
+    if(!secondNumber){
+        alert("you forgot a second number");
+    }else{
+         operate(firstNumber,secondNumber,operator);
+    secondNumber = '';
+    firstNumber=result;
+    };
+   
+});
