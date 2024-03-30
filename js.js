@@ -1,4 +1,6 @@
 const displayContent = document.querySelector('.display');
+const currentInput = document.querySelector('.current-input');
+const runningResult = document.querySelector('.running-result');
 const button1Pressed = document.querySelector('#button1');
 const button2Pressed = document.querySelector('#button2');
 const button3Pressed = document.querySelector('#button3');
@@ -34,7 +36,7 @@ function operate(firstNumber, secondNumber, operator){
         break;
         default:"NaN";
     }
-    displayContent.textContent = result;
+    runningResult.textContent = result;
     // firstNumber=result;
     // firstNumberStored = false;
     // secondNumber = '';
@@ -60,91 +62,91 @@ function divide (a,b){
 button1Pressed.addEventListener("click", ()=> {
     if (!firstNumberStored){
         firstNumber += '1';
-        displayContent.textContent = firstNumber;
+        currentInput.textContent = firstNumber;
     }
     if (firstNumberStored && !secondNumberStored){
         secondNumber += '1';
-        displayContent.textContent = secondNumber;
+        currentInput.textContent = secondNumber;
     } 
 });
 button2Pressed.addEventListener("click", ()=> {
     if (!firstNumberStored){
         firstNumber += '2';
-        displayContent.textContent = firstNumber;
+        currentInput.textContent = firstNumber;
     }
     if (firstNumberStored && !secondNumberStored){
         secondNumber += '2';
-        displayContent.textContent = secondNumber;
+        currentInput.textContent = secondNumber;
     } 
 });
 button3Pressed.addEventListener("click", ()=> {
     if (!firstNumberStored){
         firstNumber += '3';
-        displayContent.textContent = firstNumber;
+        currentInput.textContent = firstNumber;
     }
     if (firstNumberStored && !secondNumberStored){
         secondNumber += '3';
-        displayContent.textContent = secondNumber;
+        currentInput.textContent = secondNumber;
     } 
 });
 button4Pressed.addEventListener("click", ()=> {
     if (!firstNumberStored){
         firstNumber += '4';
-        displayContent.textContent = firstNumber;
+        currentInput.textContent = firstNumber;
     }
     if (firstNumberStored && !secondNumberStored){
         secondNumber += '4';
-        displayContent.textContent = secondNumber;
+        currentInput.textContent = secondNumber;
     } 
 });
 button5Pressed.addEventListener("click", ()=> {
     if (!firstNumberStored){
         firstNumber += '5';
-        displayContent.textContent = firstNumber;
+        currentInput.textContent = firstNumber;
     }
     if (firstNumberStored && !secondNumberStored){
         secondNumber += '5';
-        displayContent.textContent = secondNumber;
+        currentInput.textContent = secondNumber;
     } 
 });
 button6Pressed.addEventListener("click", ()=> {
     if (!firstNumberStored){
         firstNumber += '6';
-        displayContent.textContent = firstNumber;
+        currentInput.textContent = firstNumber;
     }
     if (firstNumberStored && !secondNumberStored){
         secondNumber += '6';
-        displayContent.textContent = secondNumber;
+        currentInput.textContent = secondNumber;
     } 
 });
 button7Pressed.addEventListener("click", ()=> {
     if (!firstNumberStored){
         firstNumber += '7';
-        displayContent.textContent = firstNumber;
+        currentInput.textContent = firstNumber;
     }
     if (firstNumberStored && !secondNumberStored){
         secondNumber += '7';
-        displayContent.textContent = secondNumber;
+        currentInput.textContent = secondNumber;
     } 
 });
 button8Pressed.addEventListener("click", ()=> {
     if (!firstNumberStored){
         firstNumber += '8';
-        displayContent.textContent = firstNumber;
+        currentInput.textContent = firstNumber;
     }
     if (firstNumberStored && !secondNumberStored){
         secondNumber += '8';
-        displayContent.textContent = secondNumber;
+        currentInput.textContent = secondNumber;
     } 
 });
 button9Pressed.addEventListener("click", ()=> {
     if (!firstNumberStored){
         firstNumber += '9';
-        displayContent.textContent = firstNumber;
+        currentInput.textContent = firstNumber;
     }
     if (firstNumberStored && !secondNumberStored){
         secondNumber += '9';
-        displayContent.textContent = secondNumber;
+        currentInput.textContent = secondNumber;
     } 
 });
 
@@ -171,7 +173,7 @@ buttonClearPressed.addEventListener("click", ()=>{
     firstNumber='', secondNumber='', operator ='';
     firstNumberStored = false;
     secondNumberStored = false;
-    displayContent.textContent = '';
+    currentInput.textContent = '';
 });
 buttonEqualPressed.addEventListener("click", ()=>{
     if(!secondNumber){
@@ -179,6 +181,7 @@ buttonEqualPressed.addEventListener("click", ()=>{
     }else{
          operate(firstNumber,secondNumber,operator);
     secondNumber = '';
+    currentInput.textContent ='';
     firstNumber=result;
     };
    
