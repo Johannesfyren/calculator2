@@ -153,19 +153,23 @@ button9Pressed.addEventListener("click", ()=> {
 
 buttonAddPressed.addEventListener("click", ()=>{
     operator ='+';
+    runningResult.textContent +='+';
     firstNumberStored = true;
 });
 
 buttonMinusPressed.addEventListener("click", ()=>{
     operator ='-';
+    runningResult.textContent +='-';
     firstNumberStored = true;
 });
 buttonMultiplyPressed.addEventListener("click", ()=>{
     operator ='*';
+    runningResult.textContent +='*';
     firstNumberStored = true;
 });
 buttonDividePressed.addEventListener("click", ()=>{
     operator ='/';
+    runningResult.textContent +='/';
     firstNumberStored = true;
 });
 
@@ -174,6 +178,7 @@ buttonClearPressed.addEventListener("click", ()=>{
     firstNumberStored = false;
     secondNumberStored = false;
     currentInput.textContent = '';
+    runningResult.textContent ='';
 });
 buttonEqualPressed.addEventListener("click", ()=>{
     if(!secondNumber){

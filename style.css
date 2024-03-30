@@ -15,20 +15,27 @@ body{
     align-items: center;
     justify-content: center;    
 }
-button{
-    padding:25px;
-    margin:2px;
-    width: 70px;
-    font-size: 20px;
-}
+
 .display{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end; 
     width: 330px;
     height: 80px;
     border: 1px solid;
     margin-bottom: 20px;
     border-radius: 5px;
     font-size: 30px;
-    text-align: end;
+    border: 1px solid rgb(134, 134, 134);
+}
+.display p{
+    margin: 0px;
+    padding-right: 10px;
+}
+.display .running-result{
+    color: rgb(141, 141, 141);
+    margin-bottom: auto;
 }
 
 .first-row, .second-row, .third-row, .fourth-row{
@@ -44,4 +51,28 @@ button{
 }
 #button-clear{
     flex: 1;
+}
+
+button{
+    padding:25px;
+    margin:2px;
+    width: 70px;
+    font-size: 20px;
+    border: 1px solid rgb(212, 212, 212);
+    /* box-shadow: 1px 1px #b9b9b9; */
+}
+
+
+#button-plus, #button-multiply, #button-minus, #button-divide{
+    background-color: aqua;
+}
+#button-equals{
+    background-color: rgb(255, 203, 124);
+}
+#button-clear{
+    background-color: rgb(252, 98, 87);
+}
+button:hover{
+    border: 1px solid rgb(189, 127, 247);
+    transition: 0.2s;
 }
